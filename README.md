@@ -127,3 +127,17 @@ npm start        # Start the production server
 npm run seed     # Seed database with sample data
 npm run dev      # Start development server (if nodemon is installed)
 ```
+
+## Testing
+
+While this implementation focuses on core functionality for the assessment, a production-ready version would benefit from comprehensive testing including:
+
+- **Unit Tests**: Route handlers, validation logic, and error handling
+- **Integration Tests**: Database operations and API endpoint behavior  
+- **End-to-End Tests**: Complete request/response cycles with various scenarios
+
+Recommended testing frameworks for future implementation:
+- **Jest** for unit and integration testing
+- **Supertest** for HTTP assertions
+
+The current implementation has been manually tested with curl commands covering all error scenarios and success cases.
