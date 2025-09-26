@@ -24,10 +24,13 @@ const seedDatabase = async () => {
         console.log('Existing users cleared');
 
         // Insert seed users into DB
-        await User.insertMany(seedUsers);
-        console.log('Database seeded with users');
+        const users = await User.insertMany(seedUsers);
+        console.log('Database seeded with the following user data: ');
+        users.forEach(user => {
+            console.log(`${user.name}(age: ${user.age}): ${user._id}`);
+        })
 
-        mongoose.connection.close();
+        await mongoose.connection.close();
         console.log('MongoDB connection closed');
         process.exit(0); // Exit - script succeeded
     } catch(error) {
