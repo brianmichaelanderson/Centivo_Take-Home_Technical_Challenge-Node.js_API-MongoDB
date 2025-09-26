@@ -49,6 +49,62 @@ Retrieves a user by their MongoDB ObjectId, but only if they are over 21 years o
 }
 ```
 
+## Prerequisites
+
+- Node.js (v14 or higher)
+- MongoDB (see setup options below)
+- npm or yarn package manager
+
+## Setup Instructions
+
+### 1. Clone and Install
+```bash
+git clone <repository-url>
+cd Centivo_Take-Home_Technical_Challenge–Node.js_API+MongoDB
+npm install
+```
+
+### 2. Environment Configuration
+Create a `.env` file in the root directory:
+```env
+MONGODB_URI=mongodb://localhost:27017/centivo_api
+PORT=3000
+```
+
+### 3. MongoDB Setup Options
+
+**Option A: Using Docker (Recommended)**
+```bash
+# Start MongoDB container
+docker run -d -p 27017:27017 --name mongodb mongo:latest
+```
+
+**Option B: Local MongoDB Installation**
+```bash
+# macOS
+brew services start mongodb/brew/mongodb-community
+
+# Linux/Ubuntu
+sudo systemctl start mongod
+
+# Windows
+net start MongoDB
+```
+
+*Note: This project uses MongoDB as a database only. The Node.js application runs locally, not in Docker.*
+
+### 4. Seed Database (Optional)
+```bash
+npm run seed
+```
+
+### 5. Start the Application
+```bash
+npm start
+```
+
+The API will be available at `http://localhost:3000`
+
 ## Testing Examples
 
 Using curl:
